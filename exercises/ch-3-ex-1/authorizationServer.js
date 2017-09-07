@@ -45,6 +45,7 @@ app.get('/', function (req, res) {
 })
 
 app.get("/authorize", function (req, res) {
+  console.log(`req query ${JSON.stringify(req.query)} `)
   let client = getClient(req.query.client_id)
   if (!client) {
     console.log('Unknown client %s', req.query.client_id)
